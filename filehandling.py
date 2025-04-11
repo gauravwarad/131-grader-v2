@@ -7,11 +7,11 @@ import re
 import zipfile
 
 # Set this to your submissions folder
-submissions_folder = "./hw2_submissions"  # <- Update this
+submissions_folder = "./submissions"  # <- Update this
 temp_extract_folder = os.path.join(submissions_folder, "__temp_extracted__")
 
 # Files to look for
-valid_filenames = ["main.cpp", "GroceryList.cpp"]
+valid_filenames = ["main.cpp", "GroceryItemDatabase.cpp", "GroceryItemDatabase.hpp"]
 valid_filenames_set = set(valid_filenames)
 
 # Dynamically create patterns based on valid filenames
@@ -120,3 +120,15 @@ with open(students, "w") as student:
         if not missing:
             student.write(f"{s}\n")
 print("\nstudents list saved")
+
+# saving students with incomplete submissions
+# saving the student names with complete submissions
+stragglers = os.path.join(submissions_folder, "incomplete_students.txt")
+with open(stragglers, "w") as straggler:
+    for s, data in sorted(student_submissions.items()):
+        submitted = data["submitted"]
+        errors = data["errors"]
+        missing = [f for f in valid_filenames if f not in submitted]
+        if missing:
+            straggler.write(f"{s}\n")
+print("\nstragglers list saved")

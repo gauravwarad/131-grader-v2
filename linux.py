@@ -29,7 +29,7 @@ import shutil
 import subprocess
 import time
 
-SUBMISSIONS_DIR = 'hw2_submissions'
+SUBMISSIONS_DIR = 'submissions'
 SOURCECODE_DIR = 'C++ Development Root/SourceCode'
 STUDENT_LIST_FILE = os.path.join(SUBMISSIONS_DIR, 'completed_students.txt')
 BUILD_SCRIPT = '../Build.sh'
@@ -114,7 +114,7 @@ def main():
 
         if proceed == 'y':
             # Run project
-            open_terminal_and_run('./project_g++', SOURCECODE_DIR)
+            open_terminal_and_run("./project_g++", SOURCECODE_DIR)
             input("Press Enter after verifying the project...")
 
             # Get grade
