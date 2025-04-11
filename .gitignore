@@ -1,6 +1,8 @@
 hw2_submissions/
 C++ Development Root/
 ideal_solution/
+grading_comments.txt
+total_scores.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -176,3 +178,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+.DS_Store
