@@ -11,7 +11,7 @@ submissions_folder = "./submissions"  # <- Update this
 temp_extract_folder = os.path.join(submissions_folder, "__temp_extracted__")
 
 # Files to look for
-valid_filenames = ["main.cpp", "GroceryItemDatabase.cpp", "GroceryItemDatabase.hpp"]
+valid_filenames = ["main.cpp", "GroceryItemDatabase.cpp", "GroceryStore.cpp"]
 valid_filenames_set = set(valid_filenames)
 
 # Dynamically create patterns based on valid filenames
@@ -57,7 +57,7 @@ def process_zip(file_path, student_name):
 
 def process_cpp(file, match):
     student_name = match.group(1)
-    base_name = match.group(2) + ".cpp"
+    base_name = match.group(2) + ".cpp" # i think it has a bug; not handling .hpp files.
     src_path = os.path.join(submissions_folder, file)
     student_dir = os.path.join(submissions_folder, student_name)
     ensure_dir(student_dir)
