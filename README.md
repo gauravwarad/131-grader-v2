@@ -7,3 +7,4 @@ how it works:
   3. place files which are not to be graded in c++ development root (the rest of the files .hpp, tests, etc)
   4. then run linux.py (copy ideal solution to ideal_solution folder; other files to c++ dev root as instructed)
   5. send everything over to the mac (because that's where the local LLM is)
+  6. run mac.py
