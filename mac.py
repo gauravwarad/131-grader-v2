@@ -23,13 +23,15 @@ import time
 from ai import grade_todo
 
 
-SUBMISSIONS_DIR = 'hw2_submissions'
+SUBMISSIONS_DIR = 'submissions'
 IDEALSOLUTION_DIR = 'ideal_solution'
 STUDENT_LIST_FILE = os.path.join(SUBMISSIONS_DIR, 'graded_students.txt') # graded students only.
+# also make sure to update out of points. hw2 is out of 5, hw3 is out of 8, hw4 is out of 7
 # txt files
 # graded_students.txt - with previously graded students
 # total_scores.txt - with students and their total scores
 # grade_comments.txt - with student names, todo wise grades and comments
+# add incomplete students to the graded_students.txt file with 0 score, so that their incomplete files will get graded.
 
 
 def find_todos(file_content):
@@ -114,7 +116,7 @@ def main():
                     
                     print(f"Grade: {grade}")
                     print(f"Comment: {comment}")
-                    if grade < 3 or grade > 5:
+                    if grade < 4 or grade > 8:
                         what_do_i_say = input("Do you agree? (y/n): ")
                         if what_do_i_say.lower() == "y":
                             # Save grade and comment

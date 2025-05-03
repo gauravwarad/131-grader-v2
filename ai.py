@@ -16,19 +16,20 @@ def grade_todo(student_code, ideal_code):
     - Only evaluate the code block shown below.
     - Grade according to the rubric.
 
-    Rubric (out of 4 points):
-    - 5/5: Fully correct and equivalent to the ideal solution.
-    - 4/5: Minor errors (e.g., style, small bugs, missing edge cases).
-    - 3/5: Logic is mostly correct, but syntax or structure is flawed.
-    - 2/4: Attempted with visible effort, but mostly incorrect.
-    - 1/4: Very little effort or completely unrelated.
-    - 0/4: No attempt.
+    Rubric (out of 7 points):
+    - 7/7: Fully correct and equivalent to the ideal solution.
+    - 6/7: Minor errors (e.g. small bugs, missing edge cases).
+    - 5/7: Logic is mostly correct, but syntax or structure is flawed.
+    - 3/7: Attempted with visible effort, but mostly incorrect.
+    - 2/7: Very little effort or completely unrelated.
+    - 0/7: No attempt.
 
     Instructions:
-    - Grade Leniently.
+    - Grade Leniently, Assume the rest of the project fills in the context unless clearly contradicted.
     - Compare the student’s solution to the ideal one.
     - Grade *only this code block*.
-    - Return a JSON object with a `grade` and a short `comment`.
+    - Ignore cosmetic issues. Focus on logic and structure.
+    - Return a JSON object with a `grade` and a short `comment`, comment should be a short phrase (e.g. "missing base case", "incorrect logic", etc.).
 
     """
 
